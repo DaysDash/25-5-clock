@@ -6,7 +6,7 @@
     </div>
     <div class="chooseTime">
       <button @click="setTime(5)" v-show="!timer">+ 5</button>
-      <button @click="setTime(-5)" v-show="!timer">- 5</button>
+      <button @click="setTime(-5)" v-show="!timer" :disabled="minutes <= 5">- 5</button>
     </div>
     <div id="control">
       <button @click="start" v-if="!timer">开始</button>
@@ -29,6 +29,10 @@ export default {
       const second = this.time % 60;
       const sec = second >= 10 ? second : `0${second}`;
       return `${min}:${sec}`;
+    },
+    biggerFive() {
+      const minut = Math.floor(this.time / 60);
+      return minut > 5;
     },
     ...mapState([
       'minutes', 'now', 'timer', 'time',
