@@ -5,7 +5,7 @@
       <p v-else>{{`${minutes}:00`}}</p>
     </div>
     <div class="chooseTime">
-      <button @click="setTime(5)" v-show="!timer">+ 5</button>
+      <button @click="setTime(5)" v-show="!timer" :disabled="minutes == 60">+ 5</button>
       <button @click="setTime(-5)" v-show="!timer" :disabled="minutes <= 5">- 5</button>
     </div>
     <div id="control">
