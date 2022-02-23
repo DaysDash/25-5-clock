@@ -1,5 +1,5 @@
 # vue-try
-
+https://daysdash.github.io/25-5-clock/dist/
 ## Project setup
 ```
 npm install
